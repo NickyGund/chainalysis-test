@@ -27,7 +27,8 @@ class PricesList extends React.Component{
     <div className="table-header-cells">Crypto</div>
     <div className="table-header-cells">Coinbase</div>
     <div className="table-header-cells">Binance</div>
-    <div className="table-header-cells">Cheaper Exchange</div>
+    <div className="table-header-cells">Buy Here</div>
+    <div className="table-header-cells">Sell Here</div>
     <div className="resp-table-body"></div>
     {this.renderPricesList()}
     </div>

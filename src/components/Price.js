@@ -49,15 +49,16 @@ export default class Price extends React.Component{
         }
         else{
 
-            var bestExchange = '';
+            
+            var buyExchange, sellExchange = '';
             var coinbasePrice, binancePrice = '';
 
             if(binance < coinbase){
-                bestExchange = "Binance";
+                buyExchange = "Binance"; sellExchange = "Coinbase";
                 binancePrice = "cheaper-price";
             }else{
-                bestExchange = "Coinbase"
-                coinbasePrice = "cheaper-price"
+                buyExchange = "Coinbase"; sellExchange = "Binance";
+                coinbasePrice = "cheaper-price";
             }
 
             return(
@@ -74,20 +75,13 @@ export default class Price extends React.Component{
                         <span className={binancePrice}>$ {parseFloat(binance)}</span>
                     </div>
                     <div className="table-body-cell">
-                        {bestExchange}
+                        {buyExchange}
+                    </div>
+                    <div className="table-body-cell">
+                        {sellExchange}
                     </div>
                 </>
-                
-               
-               
-              /* <div>
-                    <span className="crypto"> {this.props.crypto} </span>
-                <button className = {coinbasePrice} disabled={true}>
-                    ${coinbase}</button>
-                <button className = {binancePrice} disabled={true}>
-                    ${parseFloat(binance)}</button>
-                    <span className="result"> Buy at {bestExchange}!</span>
-                </div>*/
+  
             );
         }
     }
