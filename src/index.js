@@ -1,17 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Price from './components/Price';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class PricesList extends React.Component{
+  renderPricesList(){
+    return(
+      <>
+      <Price 
+      crypto={"BTC"}>
+      </Price>
+      <Price
+        crypto={"ETH"}
+      ></Price>
+      </>
+    )
+  }
+  
+  render(){
+   return(
+     <div className="main">
+      <div className="resp-table">
+    <div className="resp-header">Which exchange has a better deal?</div>
+    <div className="resp-table-header"></div>
+    <div className="table-header-cells">Crypto</div>
+    <div className="table-header-cells">Coinbase</div>
+    <div className="table-header-cells">Binance</div>
+    <div className="table-header-cells">Cheaper Exchange</div>
+    <div className="resp-table-body"></div>
+    {this.renderPricesList()}
+    </div>
+    </div>
+    
+   )
+  }
+
+}
+
+class Page extends React.Component{
+  render(){
+    return(
+       <PricesList></PricesList>
+    )
+  }
+
+}
+
+ReactDOM.render(<Page />, document.getElementById("root"));

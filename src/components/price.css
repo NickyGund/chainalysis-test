@@ -1,0 +1,10 @@
+
+div.resp-table-row{
+    display: table-row;
+}
+div.table-body-cell{
+    display: table-cell;
+}
+span.cheaper-price{
+ background-color: yellow;
+}
